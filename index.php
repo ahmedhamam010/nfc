@@ -1,3 +1,13 @@
+<?php
+setcookie('language', 'english', time() + (86400 * 30), "/"); // 86400 = 1 day
+if( isset( $_GET['lang'] ) && $_GET['lang'] == 'english' ){
+	$_COOKIE['language'] = 'english';
+}elseif( isset( $_GET['lang'] ) && $_GET['lang'] == 'arabic' ){
+	$_COOKIE['language'] = 'arabic';
+}else{
+	$_COOKIE['language'] = 'english';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,26 +53,30 @@
 	</style>
   </head>
   <body>
+  <?php include $_COOKIE['language'] . ".php" ; ?>
+  <a href="?lang=english"><?php echo $translate['english']; ?></a>
+  <a href="?lang=arabic"><?php echo $translate['arabic']; ?></a>
+  
 	  <div class="bg-top navbar-light">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-center align-items-stretch">
     			<div class="col-md-4 d-flex align-items-center py-4">
-    				<a class="navbar-brand" href="index.html">National Fertilizers Company<i class="fa fa-globe-americas"></i></a>
+    				<a class="navbar-brand" href="index.html"><?php echo $translate['National Fertilizers Company']; ?><i class="fa fa-globe-americas"></i></a>
     			</div>
 	    		<div class="col-lg-8 d-block">
 		    		<div class="row d-flex">
 					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
 					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
 					    	<div class="text">
-					    		<span>Email</span>
+					    		<span><?php echo $translate['Email']; ?></span>
 						    	<span>marketing@nfc-kuwait.com</span>
 						    </div>
 					    </div>
 					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
 					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
 						    <div class="text">
-						    	<span>Call</span>
-						    	<span>Telp/Whatsapp :  97281381</span>
+						    	<span><?php echo $translate['Call']; ?></span>
+						    	<span><?php echo $translate['Telp/Whatsapp']; ?> :  97281381</span>
 						    </div>
 					    </div>
 					    <!-- <div class="col-md topper d-flex align-items-center justify-content-end">
@@ -80,7 +94,7 @@
 	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container d-flex align-items-center">
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
+	        <span class="oi oi-menu"></span> <?php echo $translate['Menu']; ?>
 	      </button>
 	      <form action="#" class="searchform order-lg-last">
           <div class="form-group d-flex">
@@ -90,11 +104,11 @@
         </form>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
-	        	<li class="nav-item active"><a href="index.html" class="nav-link pl-0">Home</a></li>
-	        	<li class="nav-item"><a href="#" class="nav-link">About</a></li>
-	        	<li class="nav-item"><a href="#" class="nav-link">Services</a></li>
-	        	<li class="nav-item"><a href="#" class="nav-link">Products</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+	        	<li class="nav-item active"><a href="index.html" class="nav-link pl-0"><?php echo $translate['Home']; ?></a></li>
+	        	<li class="nav-item"><a href="#" class="nav-link"><?php echo $translate['About']; ?></a></li>
+	        	<li class="nav-item"><a href="#" class="nav-link"><?php echo $translate['Services']; ?></a></li>
+	        	<li class="nav-item"><a href="#" class="nav-link"><?php echo $translate['Products']; ?></a></li>
+	          <li class="nav-item"><a href="#" class="nav-link"><?php echo $translate['Contact']; ?></a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -107,9 +121,9 @@
         <div class="container">
           <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
           <div class="col-md-7 ftco-animate">
-          	<span class="subheading">Welcome to National Fertilizers Company</span>
-            <h1 class="mb-4">At NFC we think a little differently</h1>
-            <p><a href="#" class="btn btn-primary px-4 py-3 mt-3">Contact Us</a></p>
+          	<span class="subheading"><?php echo $translate['Welcome to National Fertilizers Company']; ?></span>
+            <h1 class="mb-4"><?php echo $translate['At NFC we think a little differently']; ?></h1>
+            <p><a href="#" class="btn btn-primary px-4 py-3 mt-3"><?php echo $translate['Contact Us']; ?></a></p>
           </div>
         </div>
         </div>
@@ -120,9 +134,9 @@
         <div class="container">
           <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
           <div class="col-md-7 ftco-animate">
-          	<span class="subheading">Welcome to National Fertilizers Company</span>
-            <h1 class="mb-4">we believe organically is the best at what it does</h1>
-            <p><a href="#" class="btn btn-primary px-4 py-3 mt-3">Contact Us</a></p>
+          	<span class="subheading"><?php echo $translate['Welcome to National Fertilizers Company']; ?></span>
+            <h1 class="mb-4"><?php echo $translate['we believe organically is the best at what it does']; ?></h1>
+            <p><a href="#" class="btn btn-primary px-4 py-3 mt-3"><?php echo $translate['Contact Us']; ?></a></p>
           </div>
         </div>
         </div>
@@ -142,9 +156,9 @@
 				</div>
 			</div>
 	  <div class="col-md-6 heading-section ftco-animate pl-lg-5 pt-md-0 pt-5">
-		<h2 class="mb-4">About Us</h2>
-		<p>National Fertilizer Company (NFC) is a company in Kuwait engaged in the field of Organic Fertilizer Industry, Vermiculture & Organic Waste Recycling. Being a 	Kuwait company, NFC takes pride in our land and people. Both are intrinsically connected through the food we eat</p>
-		<p>so it's important that we offer values which proactively benefit the environment as well as consumers at home and via our food exports to the World.</p>
+		<h2 class="mb-4"><?php echo $translate['About Us']; ?></h2>
+		<p><?php echo $translate['National Fertilizer Company (NFC) is a company in Kuwait engaged in the field of Organic Fertilizer Industry, Vermiculture & Organic Waste Recycling. Being a Kuwait company, NFC takes pride in our land and people. Both are intrinsically connected through the food we eat']; ?></p>
+		<p><?php echo $translate['so it is important that we offer values which proactively benefit the environment as well as consumers at home and via our food exports to the World.']; ?></p>
 		
 	</div>
 	</div>	
@@ -162,16 +176,12 @@
 					</div>
 					<div class="col-md-6 wrap-about pr-md-4 ftco-animate">
 						<div class="text">
-							<h3>The National Fertilizer Company difference</h3>
-							<p>We hold a deep belief that our products contribute to a healthier Kuwait. After all, we are what we eat and we know organic is better. Lower toxicity and heavy metal concentrations is just a better deal for plants. That's why NFC products are created and applied to improve the health of plants, stock, family and consumers by providing organic fertilizer solutions.</p>
-							<p>NFC offer key advantages over other fertilizers, especially vermicompost & Vermiculture. It is friendly to the allimportant soil biology, provides excellent effect in overall plant growth, source of balanced plant nutrient & rich in soil beneficial microorganisms</p>
+							<h3><?php echo $translate['The National Fertilizer Company difference']; ?></h3>
+							<p><?php echo $translate['We hold a deep belief that our products contribute to a healthier Kuwait. After all, we are what we eat and we know organic is better. Lower toxicity and heavy metal concentrations is just a better deal for plants. That is why NFC products are created and applied to improve the health of plants, stock, family and consumers by providing organic fertilizer solutions.']; ?></p>
+							<p><?php echo $translate['NFC offer key advantages over other fertilizers, especially vermicompost & Vermiculture. It is friendly to the allimportant soil biology, provides excellent effect in overall plant growth, source of balanced plant nutrient & rich in soil beneficial microorganisms']; ?></p>
 
 						</div>
-						<p>National Fertilizer Company offer a rapid response service throughout the
-							Kuwait and can remove almost all organic waste. Ourservices are fully
-							inclusive of Labour and loading.
-							We do all the work so you don't have to! We provide a first class, fast, efficient
-							and reliable service</p>
+						<p><?php echo $translate['National Fertilizer Company offer a rapid response service throughout the Kuwait and can remove almost all organic waste. Ourservices are fully inclusive of Labour and loading. We do all the work so you do not have to! We provide a first class, fast, efficient and reliable service']; ?></p>
 				
 					</div>
 				</div>
@@ -239,7 +249,7 @@
 			<div class="container">
 				<div class="row justify-content-center mb-5 pb-2">
           <div class="col-md-8 text-center heading-section ftco-animate">
-            <h2 class="mb-4">Our services</h2>
+            <h2 class="mb-4"><?php echo $translate['Our services']; ?></h2>
             <p></p>
           </div>
         </div>
@@ -248,8 +258,8 @@
 						<div class="services-2 noborder-left text-center ftco-animate">
 							<div class="icon mt-2 d-flex justify-content-center align-items-center"><i class="fa fa-road" style="font-size: 50px;color: #149d2b;margin: 20px;"></i></div>
 							<div class="text media-body">
-								<h3>rapid response service</h3>
-								<p>RAPID RESPONSE KUWAIT WIDE, OPEN 24/7, 365 DAYS PER YEAR,</p>
+								<h3><?php echo $translate['rapid response service']; ?></h3>
+								<p><?php echo $translate['RAPID RESPONSE KUWAIT WIDE, OPEN 24/7, 365 DAYS PER YEAR']; ?></p>
 							</div>
 						</div>
 					</div>
@@ -257,8 +267,8 @@
 						<div class="services-2 text-center ftco-animate">
 							<div class="icon mt-2 d-flex justify-content-center align-items-center"><i class="fa fa-server" style="font-size: 50px;color: #149d2b;margin: 20px;"></i></div>
 							<div class="text media-body">
-								<h3>efficient service</h3>
-								<p>our company has fast, efficient and reliable service</p>
+								<h3><?php echo $translate['efficient service']; ?></h3>
+								<p><?php echo $translate['our company has fast, efficient and reliable service']; ?></p>
 							</div>
 						</div>
 					</div>
@@ -266,8 +276,8 @@
 						<div class="services-2 text-center ftco-animate">
 							<div class="icon mt-2 d-flex justify-content-center align-items-center"><i class="fa fa-window-close" style="font-size: 50px;color: #149d2b;margin: 20px;"></i></div>
 							<div class="text media-body">
-								<h3>remove waste</h3>
-								<p>our company can remove almost all organic waste</p>
+								<h3><?php echo $translate['remove waste']; ?></h3>
+								<p><?php echo $translate['our company can remove almost all organic waste']; ?></p>
 							</div>
 						</div>
 					</div>
@@ -275,9 +285,8 @@
 						<div class="services-2 noborder-left noborder-bottom text-center ftco-animate">
 							<div class="icon mt-2 d-flex justify-content-center align-items-center"><i class="fa fa-id-badge" style="font-size: 50px;color: #149d2b;margin: 20px;"></i></div>
 							<div class="text media-body">
-								<h3>LICENSED WASTE CARRIER</h3>
-								<p>We attend, we will attend at the agreed date and time to
-									carry out your collection</p>
+								<h3><?php echo $translate['LICENSED WASTE CARRIER']; ?></h3>
+								<p><?php echo $translate['we will attend at the agreed date and time to carry out your collection']; ?></p>
 							</div>
 						</div>
 					</div>
@@ -286,8 +295,8 @@
 							<div class="icon mt-2 d-flex justify-content-center align-items-center"><i class="fa fa-users" style="font-size: 50px;color: #149d2b;margin: 20px;"></i></div>
 							
 							<div class="text media-body">
-								<h3>TRAINED STAFF</h3>
-								<p>our company has a very qualified , UNIFORMED and TRAINED STAFF</p>
+								<h3><?php echo $translate['TRAINED STAFF']; ?></h3>
+								<p><?php echo $translate['our company has a very qualified , UNIFORMED and TRAINED STAFF']; ?></p>
 							</div>
 						</div>
 					</div>
@@ -295,8 +304,8 @@
 						<div class="services-2 text-center noborder-bottom ftco-animate">
 							<div class="icon mt-2 d-flex justify-content-center align-items-center"><i class="fa fa-truck" style="font-size: 50px;color: #149d2b;margin: 20px;"></i></div>
 							<div class="text media-body">
-								<h3>WASTE TRANSFER PROVIDED</h3>
-								<p>We collect, you waste is removed from site and you will be provided with a Waste Transfer Note.</p>
+								<h3><?php echo $translate['WASTE TRANSFER PROVIDED']; ?></h3>
+								<p><?php echo $translate['We collect, you waste is removed from site and you will be provided with a Waste Transfer Note.']; ?></p>
 							</div>
 						</div>
 					</div>
@@ -415,7 +424,7 @@
 			<div class="container">
 				<div class="row justify-content-center mb-5 pb-2">
           <div class="col-md-8 text-center heading-section ftco-animate">
-            <h2 class="mb-4">Products</h2>
+            <h2 class="mb-4"><?php echo $translate['Products']; ?></h2>
             <!-- <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p> -->
           </div>
         </div>
@@ -430,10 +439,10 @@
                 </div> -->
               </a>
               <div class="text bg-white p-4">
-                <h3 class="heading"><a href="#">Vermicompost Fertilizers</a></h3>
-                <p>Provides excellent effefct in overal plant growth, shoot and rood development. Source of balanced plant nutrient. Rich in soil beneficial microorganisms. Increase soil fertility</p>
+                <h3 class="heading"><a href="#"><?php echo $translate['Vermicompost Fertilizers']; ?></a></h3>
+                <p><?php echo $translate['Provides excellent effefct in overal plant growth, shoot and rood development. Source of balanced plant nutrient. Rich in soil beneficial microorganisms. Increase soil fertility']; ?></p>
                 <div class="d-flex align-items-center mt-4">
-	                <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+	                <p class="mb-0"><a href="#" class="btn btn-primary"><?php echo $translate['Read More']; ?> <span class="ion-ios-arrow-round-forward"></span></a></p>
 	                <!-- <p class="ml-auto mb-0">
 	                	<a href="#" class="mr-2">Admin</a>
 	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
@@ -452,10 +461,10 @@
                 </div> -->
               </a>
               <div class="text bg-white p-4">
-                <h3 class="heading"><a href="#">Vermiculture ( Live Earthworms )</a></h3>
-                <p>THINK GREEN AND SAFE! CAN BE USED FOR Compost Heaps , Veggie Gardens , Pot Plants , Fishing , Animal Food and Raw Material for Animal Food Industry</p>
+                <h3 class="heading"><a href="#"><?php echo $translate['Vermiculture ( Live Earthworms )']; ?></a></h3>
+                <p><?php echo $translate['THINK GREEN AND SAFE! CAN BE USED FOR Compost Heaps , Veggie Gardens , Pot Plants , Fishing , Animal Food and Raw Material for Animal Food Industry']; ?></p>
                 <div class="d-flex align-items-center mt-4">
-	                <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+	                <p class="mb-0"><a href="#" class="btn btn-primary"><?php echo $translate['Read More']; ?> <span class="ion-ios-arrow-round-forward"></span></a></p>
 	                <!-- <p class="ml-auto mb-0">
 	                	<a href="#" class="mr-2">Admin</a>
 	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
@@ -474,10 +483,10 @@
                 </div> -->
               </a>
               <div class="text bg-white p-4">
-                <h3 class="heading"><a href="#">Organic Waste Recycling</a></h3>
-                <p>Organic waste diversion can reduce greenhouse gas Reduce Greenhouse Gas. emitting material from landfills , Your organic and food waste can be reused and turned Organic Into Compost</p>
+                <h3 class="heading"><a href="#"><?php echo $translate['Organic Waste Recycling']; ?></a></h3>
+                <p><?php echo $translate['Organic waste diversion can reduce greenhouse gas Reduce Greenhouse Gas. emitting material from landfills , Your organic and food waste can be reused and turned Organic Into Compost']; ?></p>
                 <div class="d-flex align-items-center mt-4">
-	                <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+	                <p class="mb-0"><a href="#" class="btn btn-primary"><?php echo $translate['Read More']; ?> <span class="ion-ios-arrow-round-forward"></span></a></p>
 	                <!-- <p class="ml-auto mb-0">
 	                	<a href="#" class="mr-2">Admin</a>
 	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
@@ -497,31 +506,31 @@
     			<div class="col-md-6 py-5 px-md-5">
     				<div class="py-md-5">
 		          <div class="heading-section heading-section-white ftco-animate mb-5">
-		            <h2 class="mb-4">Product Enquiry</h2>
+		            <h2 class="mb-4"><?php echo $translate['Product Enquiry']; ?></h2>
 		            <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> -->
 		          </div>
 		          <form action="#" class="appointment-form ftco-animate">
 		    				<div class="d-md-flex">
 			    				<div class="form-group">
-			    					<input type="text" class="form-control" placeholder="Name">
+			    					<input type="text" class="form-control" placeholder="<?php echo $translate['Name']; ?>">
 			    				</div>
 			    				<div class="form-group ml-md-4">
-			    					<input type="text" class="form-control" placeholder="Address">
+			    					<input type="text" class="form-control" placeholder="<?php echo $translate['Address']; ?>">
 			    				</div>
 		    				</div>
 		    				<div class="d-md-flex">
 		    					
 		    					<div class="form-group ml-md-12">
-			    					<input type="text" class="form-control" placeholder="Email">
+			    					<input type="text" class="form-control" placeholder="<?php echo $translate['Email']; ?>">
 			    				</div>
 		    				</div>
 		    				<div class="d-md-flex">
 		    					<div class="form-group">
-			              <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Request"></textarea>
+			              <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="<?php echo $translate['Request']; ?>"></textarea>
 			            </div>
 							</div>
 							<div class="form-group ml-md-4 col-md-6" style="margin-left: 0px !important;padding-left: 0px;">
-								<input type="submit" value="Send Enquiry" class="btn btn-white py-3 px-4">
+								<input type="submit" value="<?php echo $translate['Send Enquiry']; ?>" class="btn btn-white py-3 px-4">
 							  </div>	
 		    			</form>
 		    		</div>
@@ -625,10 +634,10 @@
         <div class="row mb-5">
           <div class="col-md-6 col-lg-3">
             <div class="ftco-footer-widget mb-5">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<h2 class="ftco-heading-2"><?php echo $translate['Have a Questions?']; ?></h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">Shuwaikh 3 – Block 1 - Building 6 – Office 1</span></li>
+	                <li><span class="icon icon-map-marker"></span><span class="text"><?php echo $translate['Shuwaikh 3 – Block 1 - Building 6 – Office 1']; ?></span></li>
 	                <li><a href="#"><span class="icon icon-phone"></span><span class="text"> 97281381</span></a></li>
 	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text"> marketing@nfc-kuwait.com</span></a></li>
 	              </ul>
@@ -637,11 +646,11 @@
           </div>
           <div class="col-md-6 col-lg-3">
             <div class="ftco-footer-widget mb-5">
-              <h2 class="ftco-heading-2">Recent Products</h2>
+              <h2 class="ftco-heading-2"><?php echo $translate['Recent Products']; ?></h2>
               <div class="block-21 mb-4 d-flex">
                 <a class="blog-img mr-4" style="background-image: url(images/7.jpg);"></a>
                 <div class="text">
-                  <h3 class="heading"><a href="#">Vermicompost Fertilizers</a></h3>
+                  <h3 class="heading"><a href="#"><?php echo $translate['Vermicompost Fertilizers']; ?></a></h3>
                   <!-- <div class="meta">
                     <div><a href="#"><span class="icon-calendar"></span> June 27, 2019</a></div>
                     <div><a href="#"><span class="icon-person"></span> Admin</a></div>
@@ -652,7 +661,7 @@
               <div class="block-21 mb-5 d-flex">
                 <a class="blog-img mr-4" style="background-image: url(images/8.jpg);"></a>
                 <div class="text">
-                  <h3 class="heading"><a href="#">Vermiculture ( Live Earthworms )</a></h3>
+                  <h3 class="heading"><a href="#"><?php echo $translate['Vermiculture ( Live Earthworms )']; ?></a></h3>
                   <!-- <div class="meta">
                     <div><a href="#"><span class="icon-calendar"></span> June 27, 2019</a></div>
                     <div><a href="#"><span class="icon-person"></span> Admin</a></div>
@@ -664,13 +673,13 @@
           </div>
           <div class="col-md-6 col-lg-3">
             <div class="ftco-footer-widget mb-5 ml-md-4">
-              <h2 class="ftco-heading-2">Links</h2>
+              <h2 class="ftco-heading-2"><?php echo $translate['Links']; ?></h2>
               <ul class="list-unstyled">
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>About</a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Services</a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Products</a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span><?php echo $translate['Home']; ?></a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span><?php echo $translate['About']; ?></a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span><?php echo $translate['Services']; ?></a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span><?php echo $translate['Products']; ?></a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span><?php echo $translate['Contact']; ?></a></li>
               </ul>
             </div>
           </div>
@@ -685,7 +694,7 @@
               </form>
             </div> -->
             <div class="ftco-footer-widget mb-5">
-            	<h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
+            	<h2 class="ftco-heading-2 mb-0"><?php echo $translate['Connect With Us']; ?></h2>
             	<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -698,7 +707,7 @@
           <div class="col-md-12 text-center">
 
             <p>
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+			<?php echo $translate['Copyright']; ?> &copy;<script>document.write(new Date().getFullYear());</script> <?php echo $translate['All rights reserved']; ?>
   </p>
           </div>
         </div>
