@@ -101,9 +101,9 @@ carry out your collection",
 
 "Vermicompost Fertilizers" => "Vermicompost Fertilizers",
 
-"Provides excellent effefct in overal plant growth, shoot and rood development. Source of balanced plant nutrient. Rich in soil beneficial microorganisms. Increase soil fertility" 
+"Provides excellent effect in overal plant growth, shoot and rood development. Source of balanced plant nutrient. Rich in soil beneficial microorganisms. Increase soil fertility" 
 => 
-"Provides excellent effefct in overal plant growth, shoot and rood development. Source of balanced plant nutrient. Rich in soil beneficial microorganisms. Increase soil fertility",
+"Provides excellent effect in overal plant growth, shoot and rood development. Source of balanced plant nutrient. Rich in soil beneficial microorganisms. Increase soil fertility",
 
 "Read More" => "Read More",
 

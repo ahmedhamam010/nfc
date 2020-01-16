@@ -1,5 +1,5 @@
 <?php
-setcookie('language', 'english', time() + (86400 * 30), "/"); // 86400 = 1 day
+setcookie('language', 'arabic', time() + (86400 * 30), "/"); // 86400 = 1 day
 if( isset( $_GET['lang'] ) && $_GET['lang'] == 'english' ){
 	$_COOKIE['language'] = 'english';
 }elseif( isset( $_GET['lang'] ) && $_GET['lang'] == 'arabic' ){
@@ -428,7 +428,29 @@ if( isset( $_GET['lang'] ) && $_GET['lang'] == 'english' ){
             <!-- <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p> -->
           </div>
         </div>
-				<div class="row">
+		<div class="row">
+		<div class="col-md-6 col-lg-4 ftco-animate">
+            <div class="blog-entry">
+              <a href="blog-single.html" class="block-20 d-flex align-items-end" style="background-image: url('images/9.png');background-position: right;">
+								<!-- <div class="meta-date text-center p-2">
+                  <span class="day">26</span>
+                  <span class="mos">June</span>
+                  <span class="yr">2019</span>
+                </div> -->
+              </a>
+              <div class="text bg-white p-4">
+                <h3 class="heading"><a href="#"><?php echo $translate['Organic Waste Recycling']; ?></a></h3>
+                <p><?php echo $translate['Organic waste diversion can reduce greenhouse gas Reduce Greenhouse Gas. emitting material from landfills , Your organic and food waste can be reused and turned Organic Into Compost']; ?></p>
+                <div class="d-flex align-items-center mt-4">
+	                <p class="mb-0"><a href="#" class="btn btn-primary"><?php echo $translate['Read More']; ?> <span class="ion-ios-arrow-round-forward"></span></a></p>
+	                <!-- <p class="ml-auto mb-0">
+	                	<a href="#" class="mr-2">Admin</a>
+	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+	                </p> -->
+                </div>
+              </div>
+            </div>
+          </div>		
           <div class="col-md-6 col-lg-4 ftco-animate">
             <div class="blog-entry">
               <a href="blog-single.html" class="block-20 d-flex align-items-end" style="background-image: url('images/7.jpg');">
@@ -440,7 +462,7 @@ if( isset( $_GET['lang'] ) && $_GET['lang'] == 'english' ){
               </a>
               <div class="text bg-white p-4">
                 <h3 class="heading"><a href="#"><?php echo $translate['Vermicompost Fertilizers']; ?></a></h3>
-                <p><?php echo $translate['Provides excellent effefct in overal plant growth, shoot and rood development. Source of balanced plant nutrient. Rich in soil beneficial microorganisms. Increase soil fertility']; ?></p>
+                <p><?php echo $translate['Provides excellent effect in overal plant growth, shoot and rood development. Source of balanced plant nutrient. Rich in soil beneficial microorganisms. Increase soil fertility']; ?></p>
                 <div class="d-flex align-items-center mt-4">
 	                <p class="mb-0"><a href="#" class="btn btn-primary"><?php echo $translate['Read More']; ?> <span class="ion-ios-arrow-round-forward"></span></a></p>
 	                <!-- <p class="ml-auto mb-0">
@@ -473,28 +495,7 @@ if( isset( $_GET['lang'] ) && $_GET['lang'] == 'english' ){
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 ftco-animate">
-            <div class="blog-entry">
-              <a href="blog-single.html" class="block-20 d-flex align-items-end" style="background-image: url('images/9.png');background-position: right;">
-								<!-- <div class="meta-date text-center p-2">
-                  <span class="day">26</span>
-                  <span class="mos">June</span>
-                  <span class="yr">2019</span>
-                </div> -->
-              </a>
-              <div class="text bg-white p-4">
-                <h3 class="heading"><a href="#"><?php echo $translate['Organic Waste Recycling']; ?></a></h3>
-                <p><?php echo $translate['Organic waste diversion can reduce greenhouse gas Reduce Greenhouse Gas. emitting material from landfills , Your organic and food waste can be reused and turned Organic Into Compost']; ?></p>
-                <div class="d-flex align-items-center mt-4">
-	                <p class="mb-0"><a href="#" class="btn btn-primary"><?php echo $translate['Read More']; ?> <span class="ion-ios-arrow-round-forward"></span></a></p>
-	                <!-- <p class="ml-auto mb-0">
-	                	<a href="#" class="mr-2">Admin</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-	                </p> -->
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
 			</div>
 		</section>
