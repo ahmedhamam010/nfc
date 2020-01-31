@@ -8769,8 +8769,8 @@ h1, h2, h3, h4, h5,
         color: #fff; }
 
 .services-2 {
-  border-left: 1px solid rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  /* border-left: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); */
   width: 100%;
   padding: 30px;
   -moz-transition: all 0.3s ease;
@@ -8786,7 +8786,8 @@ h1, h2, h3, h4, h5,
     .services-2 {
       border-left: none; }
       .services-2.noborder-bottom {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05); } }
+        /* border-bottom: 1px solid rgba(0, 0, 0, 0.05); */
+       } }
   .services-2 .icon span {
     font-size: 50px;
     color: #149d2b; }
@@ -9922,4 +9923,8 @@ textarea.form-control {
     stroke-dashoffset: -136px; } }
     .navbar-expand-lg .navbar-nav{
       margin: auto;
+    }
+
+    .mfp-iframe img{
+      width: 100%;
     }
